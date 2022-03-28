@@ -31,9 +31,10 @@
       <div class="modal-dialog">
         <div class="modal-body w-75 m-auto">
           <div class="modal-content p-4">
-            <h5>Escribe tu opinion para el juego: {{ juego_Selected.name }} </h5>
+            <h5>Escribe tu opinion para el juego: {{ juegoSeleccionado.name }} </h5>
             <hr />
             <div>
+
               <label>Nombre:</label>
               <input v-model="opinion.usuario.nombre" class="form-control" placeholder="Nombre"/>
             </div>
@@ -91,7 +92,7 @@ export default {
   computed: {
     ...mapState(["juegos", "opiniones"]),
     ...mapGetters(["getJuegosAndOpiniones", "getJuegoById"]),
-    juego_Selected() {
+    juegoSeleccionado() {
       const { juegoSelected } = this;
       return this.getJuegoById(juegoSelected) || {};
     },

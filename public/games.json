@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Grand Theft Auto V",
         "rating": 4.48,
         "released": "2013-09-17",
@@ -7,6 +8,7 @@
         "background_image": "https://cdn.forbes.com.mx/2020/05/Grand-Theft-Auto-V-640x360.jpg"
     },
     {
+        "id": 2,
         "name": "Portal 2",
         "rating": 4.62,
         "released": "2011-04-18",
@@ -14,6 +16,7 @@
         "background_image": "https://as01.epimg.net/meristation/imagenes/2021/04/17/reportajes/1618676976_202575_1618822001_noticia_normal.jpg"
     },
     {
+        "id": 3,
         "name": "The Witcher 3: Wild Hunt",
         "rating": 4.67,
         "released": "2013-09-17",
@@ -21,6 +24,7 @@
         "background_image": "https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2019/12/23/portada-de-the-witcher-3-wild-hunt.jpeg"
     },
     {
+        "id": 4,
         "name": "Tom Raider (2013)",
         "rating": 4.06,
         "released": "2013-09-17",
@@ -28,6 +32,7 @@
         "background_image": "https://i.blogs.es/da8082/tomb-raider-definitive-edition/1366_2000.jpg"
     },
     {
+        "id": 5,
         "name": "The Elder Scrolls V: Skyrim",
         "rating": 4.42,
         "released": "2013-09-17",
