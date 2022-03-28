@@ -12,7 +12,8 @@
             <textarea class="form-control" v-model="opinion.descripcion"></textarea>
         </div>
         <div>
-            <button class="btn btn-info mt-2" @click="modificarOpinion">Guardar</button>
+            <button class="btn btn-primary mt-3 mx-4" @click="$router.push('/administracion')">Regresar</button>
+            <button class="btn btn-info mt-3 mx-4" @click="modificarOpinion">Guardar</button>
         </div>
         </div>
     </div>
