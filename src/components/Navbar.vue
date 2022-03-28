@@ -9,7 +9,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ms-auto">
                         <router-link class="nav-link" to="/"><i class="bi bi-house-fill"></i> Home</router-link>
                         <router-link class="nav-link" to="/opiniones"><i class="bi bi-chat-square-text-fill"></i> Opiniones</router-link>
                         <router-link class="nav-link" to="/administracion"><i class="bi bi-people-fill"></i> Administración</router-link>

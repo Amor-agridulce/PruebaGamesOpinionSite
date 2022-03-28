@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Galeria</h1>
+    <h1 class="my-5">Lista de Juegos Disponibles</h1>
 
     <div class="container">
         <div class="row">
@@ -31,15 +31,28 @@
         </div>
     </div>
 
-    <div class="modal fade" id="ejemploModal">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal">
       <div class="modal-dialog">
         <div class="modal-body w-75 m-auto">
           <div class="modal-content p-4">
-            <h5>Agregar opinión para el juego: {{ juego_Selected.name }} </h5>
+            <h5>Escribe tu opinion para el juego: {{ juego_Selected.name }} </h5>
             <hr />
             <div>
               <label>Nombre:</label>
-
+              <input v-model="opinion.usuario.nombre" class="form-control" placeholder="Nombre"/>
+            </div>
+            <div>
+              <label>Opiniones:</label>
+              <textarea v-model="opinion.descripcion" class="form-control" placeholder="Tu opinión debe ir aquí..."></textarea>
+            </div>
+            <hr />
+            <div class="ms-auto">
+              <button data-bs-toggle="modal" data-bs-dismiss="modal"  @click="agregarOpinion" class="btn btn-primary mx-3">
+                Cerrar
+              </button>
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" @click="agregarOpinion" class="btn btn-primary">Guardar</button>
+              
             </div>
           </div>
         </div>
@@ -49,10 +62,10 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapGetters } from 'vuex'
+import { mapState, mapMutations, mapGetters } from "vuex";
 
 export default {
-  name: 'Home',
+  name: "Home",
   methods: {
     ...mapMutations(["AGREGAR_OPINION"]),
     agregarOpinion() {
@@ -91,5 +104,5 @@ export default {
 };
 </script>
 
-<style>
+<style >
 </style>
