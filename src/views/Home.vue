@@ -5,13 +5,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12  col-md-4" v-for="(juego, i) in juegos" :key="i">
-                <div  class="card" >
+              <div class="card m-2" >
               <img :src="(`${juego.background_image}`)" class="card-img-top" style="max-height: 7.8rem"  />
               <div class="card-body">
                 <h5 class="card-title">{{ juego.name }}</h5>
                 <p class="card-text" >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Id: {{ juego.id }}</li>
                     <li class="list-group-item">Rating: {{ juego.rating }}</li>
                     <li class="list-group-item">Released: {{ juego.released }}</li>
                     <li class="list-group-item">Updated: {{ juego.updated }}</li>
@@ -47,11 +46,11 @@
               <textarea v-model="opinion.descripcion" class="form-control" placeholder="Tu opinión debe ir aquí..."></textarea>
             </div>
             <hr />
-            <div class="ms-auto">
-              <button data-bs-toggle="modal" data-bs-dismiss="modal"  @click="agregarOpinion" class="btn btn-primary mx-3">
+            <div class="ms-auto ">
+              <button data-bs-toggle="modal" data-bs-dismiss="modal"  @click="agregarOpinion" class="btn btn-secondary mx-3 mb-2">
                 Cerrar
               </button>
-              <button data-bs-toggle="modal" data-bs-target="#exampleModal" @click="agregarOpinion" class="btn btn-primary">Guardar</button>
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" @click="agregarOpinion" class="btn btn-primary mb-2">Guardar</button>
               
             </div>
           </div>

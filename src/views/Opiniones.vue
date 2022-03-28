@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1 class="my-5">Lista de Opiniones</h1>
         <div class="container" v-if="existenOpiniones">
             <div class="alert alert-danger">
                 No existen opiniones por mostrar.

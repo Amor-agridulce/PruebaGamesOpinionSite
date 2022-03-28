@@ -9,8 +9,8 @@
         <table v-else class="table w-75 m-auto">
         <thead>
             <tr>
-            <th>ID</th>
-            <th>Usuario</th>
+            <th>#</th>
+            <th>Persona</th>
             <th>Juego</th>
             <th>Opinion</th>
             <th></th>
@@ -23,18 +23,8 @@
             <td>{{ opinion.juego.name }}</td>
             <td>{{ opinion.descripcion }}</td>
             <td>
-                <button
-                @click="irAEditarOpinion(opinion.id)"
-                class="btn btn-warning"
-                >
-                Editar
-                </button>
-                <button
-                @click="eliminar_Opinion(opinion.id)"
-                class="btn btn-danger"
-                >
-                Eliminar
-                </button>
+                <button @click="eliminar_Opinion(opinion.id)" class="btn btn-danger me-5">Eliminar</button>
+                <button @click="irAEditarOpinion(opinion.id)" class="btn btn-info">Editar</button>
             </td>
             </tr>
         </tbody>

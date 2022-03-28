@@ -1,15 +1,13 @@
 <template>
     <div>
-        Esta Página no Existe!!!
+        <h1>404</h1>
+        <p>Not Found</p>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>
