@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12  col-md-4" v-for="(juego, i) in juegos" :key="i">
               <div class="card m-2" >
-              <img :src="(`${juego.background_image}`)" class="card-img-top" style="max-height: 7.8rem"  />
+              <img :src="(`${juego.background_image}`)" class="card-img-top" style="max-height: 12rem"  />
               <div class="card-body">
                 <h5 class="card-title">{{ juego.name }}</h5>
                 <p class="card-text" >
@@ -16,12 +16,8 @@
                     <li class="list-group-item">Updated: {{ juego.updated }}</li>
                   </ul> 
                 </p>
-                <button
-                  @click="juegoSelected = juego.id"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  class="btn btn-success"
-                >
+                <hr>
+                <button @click="juegoSelected = juego.id" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">
                   Opinar
                 </button>
               </div>
