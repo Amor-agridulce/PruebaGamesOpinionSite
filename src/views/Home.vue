@@ -1,18 +1,95 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Galeria</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12  col-md-4" v-for="(juego, i) in juegos" :key="i">
+                <div  class="card" >
+              <img :src="(`${juego.background_image}`)" class="card-img-top" style="max-height: 7.8rem"  />
+              <div class="card-body">
+                <h5 class="card-title">{{ juego.name }}</h5>
+                <p class="card-text" >
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Id: {{ juego.id }}</li>
+                    <li class="list-group-item">Rating: {{ juego.rating }}</li>
+                    <li class="list-group-item">Released: {{ juego.released }}</li>
+                    <li class="list-group-item">Updated: {{ juego.updated }}</li>
+                  </ul> 
+                </p>
+                <button
+                  @click="juegoSelected = juego.id"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  class="btn btn-success"
+                >
+                  Opinar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ejemploModal">
+      <div class="modal-dialog">
+        <div class="modal-body w-75 m-auto">
+          <div class="modal-content p-4">
+            <h5>Agregar opinión para el juego: {{ juego_Selected.name }} </h5>
+            <hr />
+            <div>
+              <label>Nombre:</label>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  methods: {
+    ...mapMutations(["AGREGAR_OPINION"]),
+    agregarOpinion() {
+      const { juegoSelected } = this;
+      const opinion = {
+        ...this.opinion,
+        usuario: { ...this.opinion.usuario },
+      };
+      opinion.idJuego = juegoSelected;
+      opinion.id = Math.floor(Math.random() * 999);
+      this.AGREGAR_OPINION(opinion);
+      // Limpiar formulario
+      this.opinion.usuario = { nombre: "" };
+      this.opinion.descripcion = "";
+    },
+  },
+  data() {
+    return {
+      juegoSelected: null,
+      opinion: {
+        usuario: {
+          nombre: "",
+        },
+        descripcion: "",
+      },
+    };
+  },
+  computed: {
+    ...mapState(["juegos", "opiniones"]),
+    ...mapGetters(["getJuegosAndOpiniones", "getJuegoById"]),
+    juego_Selected() {
+      const { juegoSelected } = this;
+      return this.getJuegoById(juegoSelected) || {};
+    },
+  },
+};
 </script>
+
+<style>
+</style>
